@@ -58,3 +58,11 @@ class LangchainLLM(LLM):
     @property
     def type(self) -> str:
         return f"langchain_{self.langchain_llm._llm_type}"
+
+    def _llm_type(self) -> str:
+        # try to get the original LLM type and if fail fall to generic
+        try :
+            return f"langchain_{self.langchain_llm._llm_type}"
+        except :
+            return f"langchain_{self.type}"
+
