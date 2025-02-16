@@ -81,7 +81,8 @@ class OpenAI(BaseOpenAI):
             self._is_chat_model = False
             self.client = openai.OpenAI(**self._client_params).completions
         else:
-            raise UnsupportedModelError(self.model)
+            self._is_chat_model = True
+            self.client = openai.OpenAI(**self._client_params).chat.completions
 
     @property
     def _default_params(self) -> Dict[str, Any]:
@@ -93,4 +94,8 @@ class OpenAI(BaseOpenAI):
 
     @property
     def type(self) -> str:
+        return "openai"
+
+    @property
+    def _llm_type(self) -> str:
         return "openai"
