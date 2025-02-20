@@ -1802,7 +1802,7 @@ name = "scipy"
 version = "1.10.1"
 description = "Fundamental algorithms for scientific computing in Python"
 optional = false
-python-versions = "<3.12,>=3.8"
+python-versions = "<=3.12,>=3.8"
 groups = ["main"]
 files = [
     {file = "scipy-1.10.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:e7354fd7527a4b0377ce55f286805b34e8c54b91be865bac273f527e1b839019"},
@@ -2062,5 +2062,5 @@ type = ["pytest-mypy"]
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.8,<3.12"
+python-versions = ">=3.8,<=3.12"
 content-hash = "9fd5b43cddb627731e144406299386cec5b121e558207a6d4057c68e04f748a5"
